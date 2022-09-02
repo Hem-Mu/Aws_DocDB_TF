@@ -9,13 +9,13 @@
 # } # depends on S3
 terraform {
   backend "local" {
-    path = ".././terraform.tfstate"
+    path = "./terraform.tfstate"
   } # backend 변경 전 destroy 권장
 } 
 
 data "terraform_remote_state" "network" {
     backend = "local"
     config = {
-        path = "./terraform.tfstate"
+        path = ".././terraform.tfstate"
     }   
 }
